@@ -7,7 +7,7 @@ html {
   overflow-x: hidden; }
 
 body {
-  background-image: url(./../img/bg.jpg);
+  background-image: url(./../img/BackGround.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -25,9 +25,10 @@ body {
     position: fixed;
     opacity: .8;
     z-index: -1;
-    background: #f12711;
-    background: -webkit-linear-gradient(to right, #f5af19, #f12711);
-    background: linear-gradient(to right, #f5af19, #f12711); }
+    /* background: #f12711; */
+    /* background: -webkit-linear-gradient(to right, #f5af19, #f12711);
+    background: linear-gradient(to right, #f5af19, #f12711); } */
+  }
 
 .boxed-page {
   margin: 0 auto;
