@@ -1,10 +1,22 @@
 let darkModeClick = document.getElementById("darkMode");
-let body = document.getElementById("body");
+let darkModeChange = false;
 
 darkModeClick.addEventListener('click', function() {
-    body.style.background = "#BD7B00";
-    body.style.background = "-webkit-linear-gradient(to right, #BD7B00, #805300)";
-    body.style.background = "linear-gradient(to right, #BD7B00, #805300)";
-    body.insertRule('body::after {}', 0);
-    body.classList.toggle();
+    if(darkModeChange){
+        darkModeOff();
+        darkModeChange = false;
+    }else{
+        darkModeOn();
+        darkModeChange = true;
+    }
 })
+
+// 修改CSS偽元素(覆蓋) START
+function darkModeOn(){
+    document.styleSheets[0].insertRule('#body:after {background: #BD7B00; background: -webkit-linear-gradient(to right, #BD7B00, #805300); background:linear-gradient(to right, #BD7B00, #805300)}', 0);
+}
+
+function darkModeOff(){
+    document.styleSheets[0].deleteRule('#body:after {background: #BD7B00; background: -webkit-linear-gradient(to right, #BD7B00, #805300); background:linear-gradient(to right, #BD7B00, #805300)}', 0);
+}
+// 修改CSS偽元素(覆蓋) END
