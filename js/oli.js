@@ -1,6 +1,5 @@
 let darkModeClick = document.getElementById("darkMode");   // 夜間模式按鈕
-let darkModeChange = false;                                // 夜間模式是否開啟
-let bg = document.querySelector('.not-on-top, #gtco-header-navbar');
+var darkModeChange = false;                                // 夜間模式是否開啟
 
 // 按鈕按下後開啟夜間模式
 darkModeClick.addEventListener('click', function() {
@@ -15,14 +14,11 @@ darkModeClick.addEventListener('click', function() {
         darkModeOn();
         darkModeChange = true; 
 
-        console.log(bg);
-
         // 夜間模式按鈕圖案變更
         darkModeClick.classList.remove("lnr-moon");
         darkModeClick.classList.add("lnr-sun")
     }
 })
-
 
 // 修改CSS偽元素(覆蓋)- 夜間模式 START
 function darkModeOn(){

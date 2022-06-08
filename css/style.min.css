@@ -239,6 +239,18 @@ a {
   box-shadow: rgba(0, 0, 0, 0.05) 0px 3px 15px 0px;
   border-radius: 0; }
 
+.not-on-topDark #gtco-header-navbar {
+  position: fixed;
+  max-width: 1024px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #171717;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 3px 15px 0px;
+  border-radius: 0; }
+
 .jumbotron {
   background-color: #fff;
   padding-top: 80px;
@@ -472,7 +484,11 @@ footer {
     margin-left: 30px; }
   .not-on-top #gtco-header-navbar {
     margin-right: 30px;
-    margin-left: 30px; } }
+    margin-left: 30px; } 
+  .not-on-topDark #gtco-header-navbar {
+    margin-right: 30px;
+    margin-left: 30px; } 
+  }
 
 @media (max-width: 992px) {
   #navbar-nav-header .navbar-nav {
@@ -485,6 +501,9 @@ footer {
   .boxed-page {
     margin: 4rem 15px; }
   .not-on-top #gtco-header-navbar {
+    margin-right: 15px;
+    margin-left: 15px; }
+  .not-on-topDark #gtco-header-navbar {
     margin-right: 15px;
     margin-left: 15px; }
   .counter-item {
