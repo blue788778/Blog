@@ -516,4 +516,5 @@ footer {
   .grid-item {
     width: 100%; }
   .card-deck {
-    flex-direction: column; } }
+    flex-direction: column; } 
+  }
