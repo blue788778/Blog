@@ -33,7 +33,7 @@ mediaTitle.addEventListener('change', function test(mediaTitle) {
             // 切換時不在頂端時夜間模式顏色為深灰色(先清空，再加上顏色)
         else if(document.getElementsByClassName("not-on-topDark")[0] != null){
             titleResolutionChange.style.setProperty('background-color', '');
-            titleResolutionChange.style.setProperty('background-color', ':#404040');
+            titleResolutionChange.style.setProperty('background-color', '#404040');
         }
     }
 })
