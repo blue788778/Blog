@@ -25,13 +25,21 @@ darkModeClick.addEventListener('click', function() {
 mediaTitle.addEventListener('change', function test(mediaTitle) {
     if(!mediaTitle.matches){
         // 當切換解析度大小時，Title顏色預設
-        titleResolutionChange.style.setProperty('background-color', 'initial');
+        titleResolutionChange.style.setProperty('background-color', '');
         // 切換時不在頂端時日間模式顏色為白色
         if(document.getElementsByClassName("not-on-top")[0] != null){
             titleResolutionChange.style.setProperty('background-color', '');
         }
         // 切換時不在頂端時夜間模式顏色為深灰色(先清空，再加上顏色)
         if(document.getElementsByClassName("not-on-topDark")[0] != null){
+            titleResolutionChange.style.setProperty('background-color', '');
+            titleResolutionChange.style.setProperty('background-color', '#404040');
+        }
+    }
+    else{
+        // 切換為行動裝置時如果是夜間模式，Title也為黑色
+        let mediaTitleTopDark = document.getElementsByClassName("lnr-sun")[0];
+        if(mediaTitleTopDark != null){
             titleResolutionChange.style.setProperty('background-color', '');
             titleResolutionChange.style.setProperty('background-color', '#404040');
         }
