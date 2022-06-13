@@ -23,34 +23,46 @@ darkModeClick.addEventListener('click', function() {
 
 // 監聽解析度有變化時標題的狀態
 mediaTitle.addEventListener('change', function test(mediaTitle) {
+    let mediaTitleTopDark = document.getElementsByClassName("lnr-sun")[0];
     if(!mediaTitle.matches){
         // 當切換解析度大小時，Title顏色預設
-        titleResolutionChange.style.setProperty('background-color', '');
+        titleResolutionChange.style.setProperty('background-color', 'initial');
         // 切換時不在頂端時日間模式顏色為白色
-        if(document.getElementsByClassName("not-on-top")[0] != null){
+        if(mediaTitleTopDark == undefined){
             titleResolutionChange.style.setProperty('background-color', '');
         }
         // 切換時不在頂端時夜間模式顏色為深灰色(先清空，再加上顏色)
-        if(document.getElementsByClassName("not-on-topDark")[0] != null){
+        if(mediaTitleTopDark != undefined){
             titleResolutionChange.style.setProperty('background-color', '');
             titleResolutionChange.style.setProperty('background-color', '#404040');
         }
     }
     else{
         // 切換為行動裝置時如果是夜間模式，Title也為黑色
-        let mediaTitleTopDark = document.getElementsByClassName("lnr-sun")[0];
         if(mediaTitleTopDark != null){
             titleResolutionChange.style.setProperty('background-color', '');
             titleResolutionChange.style.setProperty('background-color', '#404040');
         }
+        else{
+            titleResolutionChange.style.setProperty('background-color', '');
+        }
     }
 })
+
+// function setStyle(a){
+//     titleResolutionChange.style.setProperty('background-color', a);
+// }
 
 // 修改CSS偽元素(覆蓋)- 夜間模式 START
 // 夜間模式開啟
 function darkModeOn(){
     document.styleSheets[0].insertRule('#body:after {background: #404040; background: -webkit-linear-gradient(to right, #404040, #000000); background:linear-gradient(to right, #404040, #000000)}', 0);
     darkModeChange = true;
+
+    // 夜間模式時標題不在頂端時也切換為黑色
+    if(document.getElementsByClassName("not-on-topDark")[0] != null || document.getElementsByClassName("not-on-top")[0] != null){
+        titleResolutionChange.style.setProperty('background-color', '#404040');
+    }
 
     // 如果為行動裝置時標題變為黑色
     if(mediaTitle.matches){
@@ -62,6 +74,11 @@ function darkModeOn(){
 function darkModeOff(){
     document.styleSheets[0].deleteRule('#body:after {background: #404040; background: -webkit-linear-gradient(to right, #404040, #000000); background:linear-gradient(to right, #404040, #000000)}', 0);
     darkModeChange = false;
+
+    // 夜間模式時標題不在頂端時也切換為黑色
+    if(document.getElementsByClassName("not-on-topDark")[0] != null || document.getElementsByClassName("not-on-top")[0] != null){
+        titleResolutionChange.style.setProperty('background-color', '#fff');
+    }
 
     // 如果為行動裝置時標題變為白色
     if(mediaTitle.matches){
