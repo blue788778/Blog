@@ -1,6 +1,6 @@
 let darkModeClick  = document.getElementById("darkMode");      // 夜間模式按鈕
 var darkModeChange = false;                                    // 夜間模式是否開啟
-let mediaTitle     = window.matchMedia("(max-width:992px)");   // 行動裝置時的標題
+var mediaTitle     = window.matchMedia("(max-width:992px)");   // 行動裝置時的標題
 var titleResolutionChange = document.getElementById("gtco-header-navbar");   // 切換解析度大小時標題
 
 // 按鈕按下後開啟夜間模式
@@ -29,11 +29,11 @@ mediaTitle.addEventListener('change', function test(mediaTitle) {
         // 當切換解析度大小時，Title顏色預設
         setStyle("initial");
         // 切換時不在頂端時日間模式顏色為白色
-        if(mediaTitleTopDark == undefined){
+        if(mediaTitleTopDark == undefined && document.getElementsByClassName("not-on-topDark")[0] != null){
             setStyle("");
         }
         // 切換時不在頂端時夜間模式顏色為深灰色(先清空，再加上顏色)
-        if(mediaTitleTopDark != undefined){
+        if(mediaTitleTopDark != undefined && document.getElementsByClassName("not-on-top")[0] != null){
             setStyle("");
             setStyle("#404040"); 
         }
