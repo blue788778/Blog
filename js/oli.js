@@ -27,7 +27,7 @@ mediaTitle.addEventListener('change', function test(mediaTitle) {
     let mediaTitleTopDark = document.getElementsByClassName("lnr-sun")[0];   // 判斷夜間模式是開啟
     if(!mediaTitle.matches){
         // 當切換解析度大小時，Title顏色預設
-        setStyle("initial");
+        setStyle("");
         // 切換時不在頂端時日間模式顏色為白色
         if(mediaTitleTopDark == undefined && document.getElementsByClassName("not-on-topDark")[0] != null){
             setStyle("");
