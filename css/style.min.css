@@ -104,8 +104,15 @@ p {
   font-weight: 300;
   line-height: 1.5em; }
 
+.section-subtitle{
+  display:flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}  
+
 .section-title,
-.section-sub-title {
+.section-sub-title {  
+  text-align: center;
   margin-bottom: 30px; }
 
 .btn {
@@ -134,9 +141,10 @@ a:hover {
   padding-top: 80px;
   padding-bottom: 80px; }
 
-.title-wrap,
+
 .section-title {
-  text-align: center; }
+  text-align: center;
+   } 
 
 .bg-white {
   background-color: #fff; }
